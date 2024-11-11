@@ -1,5 +1,5 @@
-const Joblisting = () => {
+const JobListing = () => {
   return <div></div>;
 };
 
-export default Joblisting;
+export default JobListing;
