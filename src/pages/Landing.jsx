@@ -19,7 +19,7 @@ import FAQ from "../data/FAQ.json";
 
 const LandingPage = () => {
   return (
-    <main className="flex flex-col gap-10 sm:gap-20 py-10 sm:py-10 ">
+    <main className="flex flex-col gap-10 sm:gap-20 py-10 sm:py-10 max-md:px-5 max-lg:px-5  ">
       <section className="text-center ">
         <h1 className="flex flex-col text-4xl sm:text-6xl py-4 font-bold   lg:text-8xl items-center justify-center gradient-title">
           <span className="flex flex-row">
@@ -60,7 +60,7 @@ const LandingPage = () => {
           })}
         </CarouselContent>
       </Carousel>
-      <img src="../../public/Poster.jpg" className="w-full " alt="" />
+      <img src="../../public/Poster.jpg" className="w-full" alt="" />
       <section className="grid gird-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <CardHeader>
@@ -82,7 +82,11 @@ const LandingPage = () => {
       <Accordion type="single" collapsible className="w-full">
         {FAQ.map((faq, index) => {
           return (
-            <AccordionItem key={index} value={`item-${index + 1}`}>
+            <AccordionItem
+              className="bg-black rounded-lg bg-opacity-20"
+              key={index}
+              value={`item-${index + 1}`}
+            >
               <AccordionTrigger>{faq.question}</AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>
             </AccordionItem>
