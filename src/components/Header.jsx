@@ -3,16 +3,18 @@ import logo from "../../public/Logo.png";
 import { Button } from "./ui/button";
 import {
   SignedIn,
-  SignInButton,
   SignedOut,
   UserButton,
   SignIn,
+  useUser,
 } from "@clerk/clerk-react";
-import { BriefcaseBusiness, Heart, PenBox, User } from "lucide-react";
+import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Header = () => {
   const [showSignIn, setShowSignIn] = useState(false);
   const [search, setSearch] = useSearchParams();
+  const { user } = useUser();
 
   useEffect(() => {
     if (search.get("sign-in")) {
@@ -27,9 +29,9 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="flex flex-row  py-4 justify-between items-center">
+      <nav className="flex flex-row  py-4 justify-between items-center max-md:px-4">
         <Link to="/">
-          <img src={logo} alt="" className="h-28" />
+          <img src={logo} alt="" className="md:h-28 sm:h-24 h-20 " />
         </Link>
 
         <div className="flex gap-8">
@@ -40,10 +42,12 @@ const Header = () => {
           </SignedOut>
           <SignedIn>
             {/* add a condition here */}
-            <Button variant="destructive" className="rounded-full">
-              <PenBox size={20} className="mr-2" />
-              Post a job
-            </Button>
+            {user?.unsafeMetadata?.role === "recruiter" && (
+              <Button variant="destructive" className="rounded-full">
+                <PenBox size={20} className="mr-2" />
+                Post a job
+              </Button>
+            )}
             <Link to="/post-job"> </Link>
             <UserButton
               appearance={{
