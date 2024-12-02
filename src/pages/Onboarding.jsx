@@ -2,12 +2,16 @@ import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { BarLoader, SyncLoader } from "react-spinners";
+import { SyncLoader } from "react-spinners";
 const Onboarding = () => {
   const { user, isLoaded } = useUser();
-  // if (!isLoaded) {
-  //   return <SyncLoader className="m-auto" width={"100%"} color="#36d7b7" />;
-  // }
+  if (!isLoaded) {
+    return (
+      <div className="w-full flex justify-center items-center">
+        <SyncLoader className="m-auto" width={"100%"} color="#36d7b7" />;
+      </div>
+    );
+  }
   const navigate = useNavigate();
   const handleRoleSelection = async (role) => {
     await user
