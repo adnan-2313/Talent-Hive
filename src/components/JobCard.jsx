@@ -19,7 +19,6 @@ const JobCard = ({
   SavedInit = false,
   onJobSaved = () => {},
 }) => {
-  
   const { user } = useUser();
   const [saved, setSaved] = useState(SavedInit);
 
@@ -27,7 +26,7 @@ const JobCard = ({
     fn: fnSaveJob,
     data: savedJob,
     loading: loadingSaveJob,
-  } = useFetch(saveJobs,{ alreadySaved: saved });
+  } = useFetch(saveJobs, { alreadySaved: saved });
 
   const handleSaveJob = async () => {
     await fnSaveJob({
@@ -41,9 +40,8 @@ const JobCard = ({
     if (savedJob !== undefined) setSaved(savedJob?.length > 0);
   }, [savedJob]);
 
-  
   return (
-    <Card>
+    <Card className="flex flex-col">
       <CardHeader>
         <CardTitle>
           {job.title}
@@ -74,7 +72,6 @@ const JobCard = ({
           </Link>
           {!isMyJob && (
             <button
-              
               className="w-15"
               onClick={handleSaveJob}
               disabled={loadingSaveJob}
