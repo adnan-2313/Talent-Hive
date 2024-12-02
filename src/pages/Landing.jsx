@@ -25,9 +25,10 @@ const LandingPage = () => {
           <span className="flex flex-row uppercase">
             Welcome to
             <img src={logo} alt="logo" className="h-14 -mt-6 sm:h-24 lg:h-32" />
-            
           </span>
-          <span className="sm:-mt-0 md:-mt-4 -mt-2 uppercase">Gateway to Success</span>
+          <span className="sm:-mt-0 md:-mt-4 -mt-2 uppercase">
+            Gateway to Success
+          </span>
         </h1>
         <p className="text-gray-300 text-xs sm:text-xl  sm:mt-4">
           Explore thousands of job listings or find the perfect candidate
@@ -45,7 +46,10 @@ const LandingPage = () => {
           </Button>
         </Link>
       </div>
-      <Carousel className="w-full py-10" plugins={[Autoplay({ delay: 2000 })]}>
+      <Carousel
+        className="w-full py-10 -z-10"
+        plugins={[Autoplay({ delay: 2000 })]}
+      >
         <CarouselContent className="">
           {companies.map(({ name, id, path }) => {
             return (
