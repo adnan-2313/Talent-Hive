@@ -82,7 +82,7 @@ const JobListing = () => {
       </h1>
       <form
         onSubmit={handleSearch}
-        className="h-14 flex flex-row w-full gap-2 items-center mb-3"
+        className="h-14 flex flex-row w-full gap-2 items-center mb-3 max-sm:px-4"
       >
         <Input
           type="text"
@@ -95,7 +95,7 @@ const JobListing = () => {
         </Button>
       </form>
 
-      <div className="flex flex-col sm:flex-row gap-2">
+      <div className="flex flex-col sm:flex-row gap-2 max-sm:px-4">
         <Select value={location} onValueChange={(value) => setLocation(value)}>
           <SelectTrigger>
             <SelectValue placeholder="Filter by Location" />
@@ -146,7 +146,7 @@ const JobListing = () => {
       )}
 
       {loadingJobs === false && (
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-sm:px-4">
           {jobs?.length ? (
             jobs.map((job) => {
               return (
