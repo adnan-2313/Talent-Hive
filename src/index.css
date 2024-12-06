@@ -80,7 +80,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #0c0a09;
+  background: #060505;
 }
 
 /* Handle */
@@ -92,4 +92,10 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(107, 107, 107)
+}
+
+.wmde-markdown ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  color: white;
 }
