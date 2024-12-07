@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { State } from "country-state-city";
+import { State, City } from "country-state-city";
 import { BarLoader, SyncLoader } from "react-spinners";
 import useFetch from "@/hooks/useFetch";
 import JobCard from "@/components/jobCard";

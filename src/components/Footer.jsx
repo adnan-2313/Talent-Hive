@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full text-gray-600  max-sm:leading-tight  text-center p-10 bg-[rgb(20,20,20)] mt-10 text-2xl font-semibold text-gradient">
+    <footer className="w-full text-gray-600  max-sm:leading-tight  text-center p-10 bg-[#0c0a09] mt-10 text-2xl font-semibold text-gradient">
       <div className="flex flex-row justify-center gap-2 ">
         Built By - 
         <a href="https://adnankhanportfolio.vercel.app/" target="_adnan">

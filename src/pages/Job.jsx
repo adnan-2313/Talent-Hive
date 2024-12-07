@@ -3,7 +3,13 @@ import { BarLoader } from "react-spinners";
 import MDEditor from "@uiw/react-md-editor";
 import { useNavigate, useParams } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
-import { Briefcase, CornerUpLeft, DoorClosed, DoorOpen, MapPinIcon } from "lucide-react";
+import {
+  Briefcase,
+  CornerUpLeft,
+  DoorClosed,
+  DoorOpen,
+  MapPinIcon,
+} from "lucide-react";
 
 import {
   Select,
@@ -17,6 +23,7 @@ import useFetch from "@/hooks/useFetch";
 import { getSingleJob, updateHiringStatus } from "@/api/apiJobs";
 import ApplyJobDrawer from "@/components/applyJob";
 import { Button } from "@/components/ui/button";
+import ApplicationCard from "@/components/ApplicationCard";
 
 const JobPage = () => {
   const navigate = useNavigate();
@@ -52,8 +59,14 @@ const JobPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 mt-5 bg-[#000000a6] p-4 shadow-lg rounded-2xl max-sm:mx-4">
-      <Button variant="outline" className="w-1/6  md:w-1/12"  onClick={() => navigate("/jobs")}><CornerUpLeft/></Button>
+    <div className="flex flex-col gap-8 mt-5 bg-[rgb(12,10,9,0.8)] p-4 shadow-lg  rounded-2xl max-sm:mx-4">
+      <Button
+        variant="outline"
+        className="w-1/6  md:w-1/12"
+        onClick={() => navigate("/jobs")}
+      >
+        <CornerUpLeft />
+      </Button>
       <div className="flex flex-col-reverse gap-6 md:flex-row justify-between items-center">
         <h1 className="gradient-title font-extrabold pb-3 text-4xl md:text-6xl">
           {job?.title}

@@ -71,7 +71,6 @@ const ApplyJobDrawer = ({ user, job, fetchJob, applied = false }) => {
 
   return (
     <div>
-    
       <Drawer open={applied ? false : undefined}>
         <DrawerTrigger asChild>
           <Button
