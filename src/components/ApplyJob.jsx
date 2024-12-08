@@ -61,7 +61,7 @@ const ApplyJobDrawer = ({ user, job, fetchJob, applied = false }) => {
       job_id: job.id,
       candidate_id: user.id,
       name: user.fullName,
-      status: "applied",
+      status: "Applied",
       resume: data.resume[0],
     }).then(() => {
       fetchJob();

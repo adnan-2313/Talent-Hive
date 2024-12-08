@@ -31,7 +31,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
     { job_id: application.job_id }
   );
 
-  const handleStatus = (status) => {
+  const handleStatusChange = (status) => {
     fnHiringStatus(status);
   };
   return (
@@ -72,7 +72,10 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
           <span>Status:</span>
         ) : (
           <>
-            <Select onValueChange={handleStatus}>
+            <Select
+              onValueChange={handleStatusChange}
+              defaultValue={application.status}
+            >
               <SelectTrigger className="w-52">
                 <SelectValue placeholder="Application Status" />
               </SelectTrigger>
