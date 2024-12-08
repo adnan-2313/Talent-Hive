@@ -21,7 +21,7 @@ import {
 
 import useFetch from "@/hooks/useFetch";
 import { getSingleJob, updateHiringStatus } from "@/api/apiJobs";
-import ApplyJobDrawer from "@/components/applyJob";
+import ApplyJobDrawer from "@/components/ApplyJobDrawer";
 import { Button } from "@/components/ui/button";
 import ApplicationCard from "@/components/ApplicationCard";
 

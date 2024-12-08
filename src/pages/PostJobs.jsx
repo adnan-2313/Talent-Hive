@@ -1,6 +1,6 @@
 import { getComapnies } from "@/api/apiCompanies";
 import { addNewJob } from "@/api/apiJobs";
-import AddCompanyDrwaer from "@/components/addCompany";
+import AddCompanyDrwaer from "@/components/AddCompanyDrwaer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,7 +16,6 @@ import useFetch from "@/hooks/useFetch";
 import { useUser } from "@clerk/clerk-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import MDEditor from "@uiw/react-md-editor";
-import { data } from "autoprefixer";
 import { State } from "country-state-city";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";

@@ -17,7 +17,6 @@ import { addNewComapny } from "@/api/apiCompanies";
 import useFetch from "@/hooks/useFetch";
 import { BarLoader } from "react-spinners";
 import { useEffect } from "react";
-import { data } from "autoprefixer";
 
 const schema = z.object({
   name: z.string().min(1, { message: "Company name is required" }),
@@ -57,7 +56,11 @@ const AddCompanyDrwaer = ({ fetchCompanies }) => {
   return (
     <Drawer className="max-sm:mx-2">
       <DrawerTrigger asChild>
-        <Button size="lg" className="bg-[#0c0a09] border max-sm:w-full" variant="secondary">
+        <Button
+          size="lg"
+          className="bg-[#0c0a09] border max-sm:w-full"
+          variant="secondary"
+        >
           Add Company
         </Button>
       </DrawerTrigger>
