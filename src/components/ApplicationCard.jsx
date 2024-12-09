@@ -53,7 +53,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex gap-2 items-center">
             <Briefcase size={15} />
-            {application?.experience}
+            {application?.experience} years of experience
           </div>
           <div className="flex gap-2 items-center">
             <Boxes size={15} />
@@ -69,7 +69,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
       <CardFooter className="flex justify-between">
         <span>{new Date(application?.created_at).toLocaleString()}</span>
         {isCandidate ? (
-          <span>Status:</span>
+          <span>Status: {application.status}</span>
         ) : (
           <>
             <Select

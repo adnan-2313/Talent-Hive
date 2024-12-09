@@ -33,7 +33,7 @@ const CreatedApplications = () => {
           <ApplicationCard
             key={application.id}
             application={application}
-            isCandidate="true"
+            isCandidate= "true"
           />
         );
       })}
